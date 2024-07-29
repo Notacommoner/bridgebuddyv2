@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Bridgebuddy</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/translate.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <form action='/translate' method="POST" enctype="multipart/form-data">
+        <div class="wrapper">
+          <div class="text-input">
+            <textarea id="input_text" name='input_text' spellcheck="false" class="from-text" placeholder="Enter text">{% if source_text%}{{ source_text }}{% endif %}</textarea>
+            <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation">{% if translated_text%}{{ translated_text }}{% endif %}</textarea>
+          </div>
+          <ul class="controls">
+            <li class="row from">
+              <div class="icons">
+                <i id="from" class="fas fa-volume-up"></i>
+                <i id="from" class="fas fa-copy"></i>
+              </div>
+              <select name="source_languages" id="source_languages">
+                <option value="" disabled selected>Select Language</option>
+                {% for language in source_languages %}
+                    <option value="{{ language.code }}" {% if language.code == selected_source_language %}selected{% endif %}>
+                        {{ language.name }}
+                    </option>
+                {% endfor %}
+              </select>
+            </li>
+            <li class="row to">
+              
+              <select name="target_languages" id="target_languages">
+                <option value="" disabled selected>Select Language</option>
+                {% for language in target_languages %}
+                    <option value="{{ language.code }}" {% if language.code == selected_target_language %}selected{% endif %}>
+                        {{ language.name }}
+                    </option>
+                {% endfor %}
+              </select>
+              <div class="icons">
+                <i id="to" class="fas fa-volume-up"></i>
+                <i id="to" class="fas fa-copy"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="formal-buttons">
+          <div class="formal">
+              <button type="button" class="formality-button {% if formality == 'prefer_more' %}active{% endif %}" data-formality="prefer_more">Formal</button>
+          </div>
+          <div class="casual"> 
+              <button type="button" class="formality-button {% if formality == 'prefer_less' %}active{% endif %}" data-formality="prefer_less">Casual</button>
+          </div>
+        </div>
+        <input type="hidden" name="formality" id="formality" value="{{ formality }}">
+        <button type="submit">Translate Text</button>
+      </form>
+    </div>
+
+  </body>
+
+  <script>
+    const fromText = document.querySelector(".from-text"),
+    toText = document.querySelector(".to-text"),
+    selectTag = document.querySelectorAll("select"),
+    icons = document.querySelectorAll(".row i"),
+    translateBtn = document.querySelector("button"),
+    formalityInput = document.getElementById('formality'),
+    formalityButtons = document.querySelectorAll(".formality-button");
+
+    fromText.addEventListener("keyup", () => {
+        if(!fromText.value) {
+            toText.value = "";
+        }
+    });
+
+    formalityButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          formalityInput.value = this.getAttribute('data-formality');
+          formalityButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+      });
+    });
+
+    icons.forEach(icon => {
+        icon.addEventListener("click", ({target}) => {
+            if(!fromText.value || !toText.value) return;
+            if(target.classList.contains("fa-copy")) {
+                if(target.id == "from") {
+                    navigator.clipboard.writeText(fromText.value);
+                } else {
+                    navigator.clipboard.writeText(toText.value);
+                }
+            } else {
+                let utterance;
+                if(target.id == "from") {
+                    utterance = new SpeechSynthesisUtterance(fromText.value);
+                    utterance.lang = selectTag[0].value;
+                } else {
+                    utterance = new SpeechSynthesisUtterance(toText.value);
+                    utterance.lang = selectTag[1].value;
+                }
+                speechSynthesis.speak(utterance);
+            }
+        });
+    });
+  </script>
+</html>

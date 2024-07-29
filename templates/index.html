@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridgebuddy</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/laptop.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/tablet.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/mobile.css')}}">
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>BridgeBuddy</h1>
+            <nav>
+                <a href="#hero">Home</a>
+                <a href="#services">Service</a>
+                <a href="#features">Feature</a>
+                <a href="#partners">Partners</a>
+                <a href="#testimonials">Testimonial</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="./sign.html"><h2 class="sign-in">Sign In</h2></a>
+                <a href="./sign.html"><h2 class="sign-up">Sign Up</h2></a>
+            </div>
+            <div id="ham">
+                <img src="{{url_for('static', filename='images/hamburger.svg')}}" alt="">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-content" id="hero-content">
+                    <h2>Translate your <span class="highlight">Text</span>
+                        <br> and <span class="highlight">Documents</span></h2>
+                    <p>BridgeBuddy is an advanced language translation model
+                        <br> designed to seamlessly convert text between languages,
+                        <br> ensuring accurate, contextually appropriate, and fluent
+                        <br> translations for effective cross-language communication.</p>
+                    <a href="{{ url_for('translate') }}"><h2 class="translate">Translate</h2></a>
+                </div>
+                <div class="hero-image" id="hero-image">
+                    <img src="{{url_for('static', filename='images/heroimage.svg')}}" alt="BridgeBuddy App">
+                </div>
+        </section>
+        <section class="stats">
+            <div class="container">
+                <div class="stat">
+                    <h3>30+</h3>
+                    <p>Languages supported</p>
+                </div>
+                <div class="stat">
+                    <h3>100+</h3>
+                    <p>Translations completed</p>
+                </div>
+                <div class="stat">
+                    <h3>100+</h3>
+                    <p>Reviews given</p>
+                </div>
+            </div>
+        </section>
+        <section class="services" id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p>Our Comprehensive Solutions for Seamless Multilingual Communication</p>
+                <div class="service-cards">
+                     <div>
+                        <img src="{{url_for('static', filename='images/accuratetrans.svg')}}" alt="">
+                     </div>
+                     <div>
+                        <img src="{{url_for('static', filename='images/bridging.svg')}}" alt="">
+                     </div>
+                     <div>
+                        <img src="{{url_for('static', filename='images/equality.svg')}}" alt="">
+                     </div>
+                </div>
+            </div>
+        </section>
+        <section class="features" id="features">
+            <div class="container">
+                <div class="heading"><h2>Features</h2>
+                <p>Our Advanced Capabilities for Enhanced Translation and Communication</p>
+                </div>
+                <div class="feature-cards">
+                    <div class="card">
+                        <div>
+                            <img src="{{url_for('static', filename='images/apifeature.svg')}}" alt="">
+                        </div>
+                        <div class="ftext">
+                        <h3>Multilingual API Integration</h3>
+                        <p>BridgeBuddy's multilingual API offers real-time, accurate translations for various languages, supporting global users. It handles complex translation tasks, making it a reliable solution for businesses, schools, and individuals.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="ftext" id="ftext">
+                        <h3>Real Time Translation</h3>
+                        <p>BridgeBuddy offers real-time, accurate translation for live conversations, meetings, and events. It uses advanced machine learning for precise, contextually appropriate translations, ensuring effective multilingual communication.</p>
+                        </div>
+                        <div id="image">
+                            <img src="{{url_for('static', filename='images/realtimefeature.svg')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <img src="{{url_for('static', filename='images/transstylefeature.svg')}}" alt="">
+                        </div>
+                        <div class="ftext">
+                        <h3>Option for Translation Style</h3>
+                        <p>BridgeBuddy's translation style feature allows users to choose between casual and formal modes for precise, contextually appropriate translations, enhancing communication clarity for personal, academic, and business interactions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="partners" id="partners">
+            <div class="container">
+                <div class="heading">
+                <h2>Our partners</h2>
+                <p>These organizations put their trust in us</p>
+                </div>
+                <div class="partner-logos">
+                    <img class="tiidelab" src="{{url_for('static', filename='images/tiidelab.svg')}}" alt="Partner 1">
+                    <img class="shams" src="{{url_for('static', filename='images/shamzbridge.svg')}}" alt="Partner 2">
+                </div>
+            </div>
+        </section>
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="heading">
+                <h2>Testimonials</h2>
+                <p>Hear From Our Satisfied Users: Real Experiences with BridgeBuddy</p>
+                </div>
+                <div id="desktop">
+                   <img src="{{url_for('static', filename='images/Testimonial.svg')}}" alt="">
+                </div>
+                <div id="mobile">
+                    <img src="{{url_for('static', filename='images/revimg.svg')}}" alt="">
+                </div>
+            </div>   
+        </section>
+
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; Bridgebuddy, all rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

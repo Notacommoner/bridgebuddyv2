@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Language Translator</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/translate.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="text-input">
+          <textarea spellcheck="false" class="from-text" placeholder="Enter text"></textarea>
+          <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation"></textarea>
+        </div>
+        <ul class="controls">
+          <li class="row from">
+            <div class="icons">
+              <i id="from" class="fas fa-volume-up"></i>
+              <i id="from" class="fas fa-copy"></i>
+            </div>
+            <select name="languages" id="languages">
+              {% for language in source_languages %}
+                  <option value="{{ language.code }}" {% if language.code == selected_language %}selected{% endif %}>
+                      {{ language.name }}
+                  </option>
+              {% endfor %}
+            </select>
+          </li>
+          <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+          <li class="row to">
+            <select>
+              {% for language in target_languages %}
+                  <option value="{{ language.code }}" {% if language.code == selected_language %}selected{% endif %}>
+                      {{ language.name }}
+                  </option>
+              {% endfor %}
+            </select>
+            <div class="icons">
+              <i id="to" class="fas fa-volume-up"></i>
+              <i id="to" class="fas fa-copy"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="formal-buttons">
+        <div class="formal">
+            <button>Formal</button>
+        </div>
+        <div class="casual">
+            <button>Casual</button>
+        </div>
+    </div>
+      <button>Translate Text</button>
+    </div>
+
+    <script src="js/countries.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+
+  <script>
+    const fromText = document.querySelector(".from-text")
+    toText = document.querySelector(".to-text")
+    exchageIcon = document.querySelector(".exchange")
+    selectTag = document.querySelectorAll("select")
+    icons = document.querySelectorAll(".row i");
+    translateBtn = document.querySelector("button")
+
+exchageIcon.addEventListener("click", () => {
+    let tempText = fromText.value,
+    tempLang = selectTag[0].value;
+    fromText.value = toText.value;
+    toText.value = tempText;
+    selectTag[0].value = selectTag[1].value;
+    selectTag[1].value = tempLang;
+});
+
+fromText.addEventListener("keyup", () => {
+    if(!fromText.value) {
+        toText.value = "";
+    }
+});
+
+translateBtn.addEventListener("click", () => {
+    let text = fromText.value.trim(),
+    translateFrom = selectTag[0].value,
+    translateTo = selectTag[1].value;
+    if(!text) return;
+    toText.setAttribute("placeholder", "Translating...");
+    let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
+    fetch(apiUrl).then(res => res.json()).then(data => {
+        toText.value = data.responseData.translatedText;
+        data.matches.forEach(data => {
+            if(data.id === 0) {
+                toText.value = data.translation;
+            }
+        });
+        toText.setAttribute("placeholder", "Translation");
+    });
+});
+
+icons.forEach(icon => {
+    icon.addEventListener("click", ({target}) => {
+        if(!fromText.value || !toText.value) return;
+        if(target.classList.contains("fa-copy")) {
+            if(target.id == "from") {
+                navigator.clipboard.writeText(fromText.value);
+            } else {
+                navigator.clipboard.writeText(toText.value);
+            }
+        } else {
+            let utterance;
+            if(target.id == "from") {
+                utterance = new SpeechSynthesisUtterance(fromText.value);
+                utterance.lang = selectTag[0].value;
+            } else {
+                utterance = new SpeechSynthesisUtterance(toText.value);
+                utterance.lang = selectTag[1].value;
+            }
+            speechSynthesis.speak(utterance);
+        }
+    });
+});
+  </script>
+</html>
