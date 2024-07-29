@@ -1,0 +1,21 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: aliceblue;
+    margin: 0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: rgb(50, 50, 149);
+}
+button :hover {
+    background-color: rgb(24, 26, 26);
+}

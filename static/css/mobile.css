@@ -1,0 +1,417 @@
+@media (max-width: 700px){
+    *{
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    :root {
+        --primary:  #305CDE;
+        --white: #ffffff;
+      }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+      
+    /* Make image,video, and audio tag to take 100% of the screen to fix
+    overflow or horizontal scrolling */
+    img,
+    video,
+    audio{
+        max-width: 100%;
+    }
+    
+                    /* All Content Padding */
+                    /* All Content padding */
+    
+    body {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+                    /* Heading/Navigation */
+    
+    header {
+        margin-top: 20px;
+    }
+    
+    header .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    header .container h1 {
+        color: var(--primary);
+        font-family: Inter;
+        font-size: 18px;
+    }
+    
+    nav {
+        display: none;
+        margin-top: 6px;
+        gap: 23px;
+    }
+    
+    nav a {
+        color: #18191F !important;
+        font-family: Inter;
+        font-size: 10px;
+    }
+    
+    .auth-buttons {
+        display: none;
+        gap: 10px;
+    }
+
+    #ham {display: block;}
+    
+    .sign-in {
+        display: inline-flex;
+        padding: 10px 20px;
+        align-items: center;
+        gap: 10px;
+        border-radius: 6px;
+        background: #F5F7FA;
+    
+        color: #305CDE;
+        text-align: center;
+        font-family: Inter;
+        font-size: 10px;
+    }
+    
+    .sign-up {
+        display: inline-flex;
+        padding: 10px 20px;
+        align-items: center;
+        gap: 10px;
+        border-radius: 6px;
+        background: #305CDE;
+    
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 10px;
+    }
+                /* End of heading/nav */
+    
+                /* Hero section */
+                /* Hero section */
+    .hero .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    #hero-content {order: 2;}
+    #hero-image {order: 1;}
+
+    .hero .container .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 60px;
+    }
+    
+    .hero .container .hero-content h2 {
+        color: #000;
+        font-family: Inter;
+        font-size: 27px;
+    }
+    
+    .hero .container .hero-content h2 .highlight {
+        color: var(--primary);
+        font-family: Inter;
+        font-size: 27px;
+    }
+    
+    .hero .container .hero-content p {
+        color: #7D7987;
+        font-family: Inter;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    
+    .hero .container .hero-content .translate {
+        display: inline-flex;
+        padding: 14px 32px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    
+        border-radius: 6px;
+        background: var(--primary);
+    
+        color: var(--Neutral-White, #FFF);
+        text-align: center;
+        font-family: Inter;
+        font-size: 10px;
+        max-width: 80px;
+        max-height: 30px;
+        margin-top: 15px;
+    }
+    
+    .hero-image {
+        max-width: 283px;
+        max-height: 297px;
+    }
+    
+    .stats .container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    
+    .stats .container .stat {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .stats .container .stat h3 {
+        color: var(--primary);
+        font-family: Inter;
+        font-size: 20px;
+    }
+    
+    .stats .container .stat p {
+        color: #000;
+        font-family: Inter;
+        font-size: 12px;
+    }
+                /* End of hero section */
+    
+                /* Service section */
+                /* Service section */
+    
+    .services .container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 35px;
+    }
+    
+    .services .container h2 {
+        color: var(--primary);
+        text-align: center;
+        font-family: Inter;
+        font-size: 22px;
+    }
+    
+    .services .container p {
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    
+    .services .container .service-cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 27px;
+        margin-top: 40px;
+    }
+
+    .services .container .service-cards img {
+        max-width: 300px;
+        max-height: 322px;
+    }
+                    /* End of sercice section */
+                    
+    
+                    /* Features section */
+    .features .container .heading {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 70px;
+    }
+    
+    .features .container .heading h2 {
+        color: var(--primary);
+        text-align: center;
+        font-family: Inter;
+        font-size: 22px;
+    }
+    
+    .features .container .heading p {
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    
+    .features .container .feature-cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        margin-top: 50px;
+    }
+    
+    .features .container .feature-cards img {
+        max-width: 311px;
+        max-height: 284px;
+    }
+
+    .features .container .feature-cards .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    
+    #ftext {order: 2;}
+    #image {order: 1;}
+    
+    .features .container .feature-cards .card .ftext {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        max-width: 271px;
+        margin-top: 30px;
+    }
+    
+    .features .container .feature-cards .card .ftext h3 {
+        color: #000;
+        font-family: Inter;
+        font-size: 21px;
+    }
+    
+    .features .container .feature-cards .card .ftext p {
+        color: #000;
+        font-family: Inter;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+                    /* End of features */
+    
+                    /* Partners */
+                    /* Partners */
+    .partners .container {
+        margin-top: 70px;
+    }
+    
+    .partners .container .heading {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .partners .container .heading h2 {
+        color: var(--primary);
+        text-align: center;
+        font-family: Inter;
+        font-size: 22px;
+    }
+    
+    .partners .container .heading p {
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    
+    .partners .container .partner-logos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        margin-top: 15px;
+    }
+
+    .partners .container .partner-logos .tiidelab {
+        max-width: 178px;
+        max-height: 55px;
+    }
+
+    .partners .container .partner-logos .shams {
+        max-width: 331px;
+        max-height: 40px;
+    }
+
+                    /* End of partners */
+    
+    
+                    /* Testimonials */
+                    /* Testimonials */
+
+    
+    .testimonials .container {
+        margin-top: 70px;
+    
+    }
+    
+    .testimonials .container .heading {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+    
+    .testimonials .container .heading h2 {
+        color: var(--primary);
+        text-align: center;
+        font-family: Inter;
+        font-size: 22px;
+    }
+    
+    .testimonials .container .heading p {
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .testimonials .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 30px;
+        align-items: center;
+    }
+
+    
+
+
+    #desktop {
+        display: none; /* Hide desktop on mobile devices */
+     }
+     #mobile {
+        display: block; /* Show mobile on mobile devices */
+     }
+    
+    
+                /* End of testimonial */
+    
+                /* footer */
+                /* footer */
+    footer .container {
+        margin-top: 150px;
+        display: flex;
+    
+        color: #000;
+        font-family: Inter;
+        font-size: 12px;
+    
+        background: #EFF3FF;
+    
+        padding: 19px 30px;
+        align-items: center;
+        gap: 10px;
+    }
+        
+}

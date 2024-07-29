@@ -1,0 +1,342 @@
+@media (max-width: 700px) {
+    *{
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    :root {
+        --primary:  #305CDE;
+        --white: #ffffff;
+      }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+      
+    /* Make image,video, and audio tag to take 100% of the screen to fix
+    overflow or horizontal scrolling */
+    img,
+    video,
+    audio{
+        max-width: 100%;
+    }
+    
+                    /* All Content Padding */
+                    /* All Content padding */
+    
+    body {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+                    /* Header */
+                    /* Header */
+    
+    .container {
+        margin-top: 30px;
+    }
+    
+    .container .header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .container .header h1 {
+        color: var(--primary);
+        font-family: Inter;
+        font-size: 22px;
+        margin-top: 5px;
+    }
+    
+    .container .header .icons {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .container .header .settings {
+        display: flex;
+        width: 50px;
+        height: 40px;
+        padding: 4px 7px;
+        align-items: center;
+        gap: 8px;
+    
+        border-radius: 5px;
+        background: #F5F7FA;
+    }
+    
+    .container .header .profile {
+        display: flex;
+        width: 50px;
+        height: 40px;
+        padding: 3.8px 6.7px;
+        align-items: center;
+        gap: 8px;
+    
+        border-radius: 5px;
+        background: #305CDE;
+    }
+    
+                    /* Body */
+                    /* Body */
+    .content .buttons {
+        display: flex;
+        gap: 11px;
+        margin-top: 20px;
+    }
+    
+    .content .buttons .doc {
+        display: flex;
+        display: inline-flex;
+        height: 30.167px;
+        padding: 6.725px 13.45px;
+        align-items: center;
+        gap: 6.725px;
+    
+        border-radius: 5px;
+        background: #F5F7FA;
+    
+    
+    }
+
+    .content .buttons .doc img {
+        width: 16.601px;
+        height: 16.602px;
+    }
+    
+    .content .buttons .doc h2 {
+        color: #305CDE;
+    
+        text-align: center;
+        font-family: Inter;
+        font-size: 13px;
+    }
+    
+    .content .buttons .text {
+        display: flex;
+        display: inline-flex;
+        height: 30.167px;
+        padding: 6.725px 13.45px;
+        align-items: center;
+        gap: 6.725px;
+        border-radius: 5px;
+        background: #305CDE;;
+    
+        color: #FFF;
+    }
+
+    .content .buttons .text img {
+        width: 16.601px;
+        height: 16.602px;
+    }
+    
+    .content .buttons .text h2{
+        text-align: center;
+        font-family: Inter;
+        font-size: 13px;
+    }
+    
+    
+    .textarea {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+        gap: 47px;
+    }
+    
+    .languages p {
+        display: flex;
+        gap: 16px;
+    
+        color: #000;
+        font-family: Inter;
+        font-size: 16px;
+    }
+    
+    .lang {
+        display: flex;
+        gap: 16px;
+    
+        color: #000;
+        font-family: Inter;
+        font-size: 16px;
+        justify-content: left;
+    }
+
+    #india {
+        color: #305CDE;
+    }
+    
+    textarea {
+        width: 320.453px;
+        height: 166.926px;
+        margin-top: 20px;
+    }
+    
+    .dlang {
+        border-radius: 20px;
+        border: 1px solid #305CDE;
+    }
+    
+    .tlang {
+        border-radius: 20px;
+        background: #F5F7FA;
+        border: none;
+    }
+    
+    ::placeholder {
+        color: #000;
+        font-family: Inter;
+        font-size: 14px;
+        margin-top: 36px;
+        padding-left: 17px;
+        padding-top: 20px;
+    }
+    
+    .formal-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 14px;
+    }
+    
+    
+    .formal-buttons .formal {
+        display: flex;
+        width: 121.275px;
+        height: 39.703px;
+        padding: 0px 8.662px;
+        align-items: center;
+        gap: 2.166px;
+    
+        border-radius: 5px;
+        background: #305CDE;
+    }
+    
+    .formal-buttons .formal h2 {
+        color: #FFF;
+        font-family: Inter;
+        font-size: 18px;
+    }
+
+    .formal-buttons .formal img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .formal-buttons .casual {
+        display: flex;
+        width: 121.275px;
+        height: 39.703px;
+        padding: 0px 8.662px;
+        align-items: center;
+        gap: 2.166px;
+    
+        border-radius: 5px;
+        background: #F5F7FA;
+    }
+    
+    .formal-buttons .casual h2 {
+        color: #305CDE;
+        font-family: Inter;
+        font-size: 18px;
+    }
+
+    .formal-buttons .casual img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .translate-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 54px;
+    }
+    
+    
+    .translate-button h2 {
+        display: flex;
+        width: 198px;
+        height: 61px;
+        padding: 18px 50px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    
+        border-radius: 10px;
+        background: #305CDE;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 22px;
+    }
+    
+    .rbuttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 90px;
+        gap: 16px;
+    }
+    
+    .feedback {
+        display: flex;
+        display: flex;
+        width: 184px;
+        height: 60px;
+        padding: 12px 14px;
+        align-items: center;
+        gap: 9px;
+    
+        border-radius: 10px;
+        background: #F5F7FA;
+    
+    }
+    
+    .feedback h2 {
+        color: #305CDE;
+
+        font-family: Inter;
+        font-size: 20.921px;
+    }
+    
+    .history {
+        display: flex;
+        width: 174.365px;
+        height: 56.291px;
+        padding: 10.984px 12.357px;
+        align-items: center;
+        gap: 8.238px;
+    
+        border-radius: 10px;
+        background: #F5F7FA;
+    }
+    
+    .history h2 {
+        color: #305CDE;
+
+        font-family: Inter;
+        font-size: 20.921px;
+    }
+    
+    footer .container {
+        margin-top: 150px;
+        display: flex;
+    
+        color: #000;
+        font-family: Inter;
+        font-size: 12px;
+    
+        background: #EFF3FF;
+    
+        padding: 19px 30px;
+        align-items: center;
+        gap: 10px;
+    }
+        
+}
