@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template, send_file
 import os
 from datetime import date
 import deepl
@@ -55,6 +55,35 @@ def translate():
             selected_target_language=targetlang,
             formality=formality
         )
+
+@app.route('/translate/terminal',methods=['POST', 'GET'])
+def translateTerminal():
+    source_languages = list_all_languages("source")
+    target_languages = list_all_languages("target")
+
+    if request.method == 'GET':
+        print(source_languages, target_languages)
+        formality = "prefer_more"
+        return render_template(
+            'translate.html', 
+            source_languages=source_languages,
+            target_languages=target_languages,
+            formality=formality
+        )
+    else:
+        input_text = request.form['input_text']
+        sourcelang = request.form['source_languages']
+        targetlang = request.form['target_languages']
+        formality = request.form['formality']
+        translated_text = translatetext(input_text,sourcelang,targetlang,formality)
+       
+        return translated_text
+    
+@app.route('/download')
+def download_file():
+    # Ensure the file path is correct and accessible
+    file_path = os.getcwd() + "/index.py"
+    return send_file(file_path, as_attachment=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
