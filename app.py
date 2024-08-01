@@ -82,7 +82,7 @@ def translateTerminal():
 @app.route('/download')
 def download_file():
     # Ensure the file path is correct and accessible
-    file_path = os.getcwd() + "/dist/index.exe"
+    file_path = os.getcwd() + "/index.exe"
     return send_file(file_path, as_attachment=True)
 
 if __name__ == "__main__":
