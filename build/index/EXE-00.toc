@@ -94,18 +94,18 @@
    'C:\\Users\\RASHEED '
    'AYOADE\\Desktop\\bridgebuddy2.0\\build\\index\\base_library.zip',
    'DATA'),
-  ('certifi\\cacert.pem',
-   'C:\\Users\\RASHEED '
-   'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\certifi\\cacert.pem',
-   'DATA'),
   ('certifi\\py.typed',
    'C:\\Users\\RASHEED '
    'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\certifi\\py.typed',
+   'DATA'),
+  ('certifi\\cacert.pem',
+   'C:\\Users\\RASHEED '
+   'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\certifi\\cacert.pem',
    'DATA')],
  [],
  False,
  False,
- 1722467386,
+ 1722500425,
  [('run.exe',
    'C:\\Users\\RASHEED '
    'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',

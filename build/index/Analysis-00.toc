@@ -207,6 +207,14 @@
    'C:\\Users\\RASHEED '
    'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\dotenv\\parser.py',
    'PYMODULE'),
+  ('deepl',
+   'C:\\Users\\RASHEED '
+   'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\deepl\\__init__.py',
+   'PYMODULE'),
+  ('deepl.translator',
+   'C:\\Users\\RASHEED '
+   'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\deepl\\translator.py',
+   'PYMODULE'),
   ('requests',
    'C:\\Users\\RASHEED '
    'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\__init__.py',
@@ -233,14 +241,8 @@
    'C:\\Program Files\\Lib\\urllib\\response.py',
    'PYMODULE'),
   ('urllib.error', 'C:\\Program Files\\Lib\\urllib\\error.py', 'PYMODULE'),
-  ('http.client', 'C:\\Program Files\\Lib\\http\\client.py', 'PYMODULE'),
   ('http.cookies', 'C:\\Program Files\\Lib\\http\\cookies.py', 'PYMODULE'),
   ('http.cookiejar', 'C:\\Program Files\\Lib\\http\\cookiejar.py', 'PYMODULE'),
-  ('http', 'C:\\Program Files\\Lib\\http\\__init__.py', 'PYMODULE'),
-  ('json', 'C:\\Program Files\\Lib\\json\\__init__.py', 'PYMODULE'),
-  ('json.encoder', 'C:\\Program Files\\Lib\\json\\encoder.py', 'PYMODULE'),
-  ('json.decoder', 'C:\\Program Files\\Lib\\json\\decoder.py', 'PYMODULE'),
-  ('json.scanner', 'C:\\Program Files\\Lib\\json\\scanner.py', 'PYMODULE'),
   ('requests.models',
    'C:\\Users\\RASHEED '
    'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\models.py',
@@ -649,14 +651,12 @@
    'C:\\Users\\RASHEED '
    'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\urllib3\\contrib\\emscripten\\fetch.py',
    'PYMODULE'),
-  ('deepl',
-   'C:\\Users\\RASHEED '
-   'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\deepl\\__init__.py',
-   'PYMODULE'),
-  ('deepl.translator',
-   'C:\\Users\\RASHEED '
-   'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\deepl\\translator.py',
-   'PYMODULE'),
+  ('json', 'C:\\Program Files\\Lib\\json\\__init__.py', 'PYMODULE'),
+  ('json.encoder', 'C:\\Program Files\\Lib\\json\\encoder.py', 'PYMODULE'),
+  ('json.decoder', 'C:\\Program Files\\Lib\\json\\decoder.py', 'PYMODULE'),
+  ('json.scanner', 'C:\\Program Files\\Lib\\json\\scanner.py', 'PYMODULE'),
+  ('http.client', 'C:\\Program Files\\Lib\\http\\client.py', 'PYMODULE'),
+  ('http', 'C:\\Program Files\\Lib\\http\\__init__.py', 'PYMODULE'),
   ('deepl.api_data',
    'C:\\Users\\RASHEED '
    'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\deepl\\api_data.py',
@@ -709,11 +709,11 @@
    'C:\\Users\\RASHEED '
    'AYOADE\\Desktop\\bridgebuddy2.0\\build\\index\\base_library.zip',
    'DATA'),
-  ('certifi\\cacert.pem',
-   'C:\\Users\\RASHEED '
-   'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\certifi\\cacert.pem',
-   'DATA'),
   ('certifi\\py.typed',
    'C:\\Users\\RASHEED '
    'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\certifi\\py.typed',
+   'DATA'),
+  ('certifi\\cacert.pem',
+   'C:\\Users\\RASHEED '
+   'AYOADE\\AppData\\Roaming\\Python\\Python312\\site-packages\\certifi\\cacert.pem',
    'DATA')])
